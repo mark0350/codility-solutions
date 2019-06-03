@@ -2,30 +2,31 @@ function solution(H) {
   let stack = [];
   let count = 0;
   //loop the array
-  for(let height of H){
+  for (let height of H) {
     console.log(height);
     //if stack is empty, push height
-    if(stack.length === 0){
+    if (stack.length === 0) {
       stack.push(height);
       count++;
-    }else if(stack.length > 0 && height < stack[stack.length -1]){
-      do{
-        if(height < stack[stack.length - 1]){
+    } else if (stack.length > 0 && height < stack[stack.length - 1]) {
+      do {
+        if (height < stack[stack.length - 1]) {
           stack.pop();
-        }else if (height === stack[stack.length - 1]){
+        } else if (height === stack[stack.length - 1]) {
           break;
-        } else if(height > stack[stack.length -1]){
+        } else if (height > stack[stack.length - 1]) {
           stack.push(height);
           count++;
           break;
         }
-      }while(stack.length > 0);
-      if(stack.length === 0){
+      }
+      while (stack.length > 0);
+      if (stack.length === 0) {
         stack.push(height);
         count++;
       }
 
-    }else if(stack.length > 0 && height > stack[stack.length -1]){
+    } else if (stack.length > 0 && height > stack[stack.length - 1]) {
       stack.push(height);
       count++;
     }

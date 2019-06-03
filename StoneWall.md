@@ -10,9 +10,9 @@ that, given an array H of N positive integers specifying the height of the wall,
 
 For example, given array H containing N = 9 integers:
 
-  H[0] = 8    H[1] = 8    H[2] = 5
-  H[3] = 7    H[4] = 9    H[5] = 8
-  H[6] = 7    H[7] = 4    H[8] = 8
+      H[0] = 8    H[1] = 8    H[2] = 5
+      H[3] = 7    H[4] = 9    H[5] = 8
+      H[6] = 7    H[7] = 4    H[8] = 8
 the function should return 7. The figure shows one possible arrangement of seven blocks.
 
 

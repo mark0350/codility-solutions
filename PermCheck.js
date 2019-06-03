@@ -1,8 +1,8 @@
 function solution(A) {
   let result = 1;
-  A = A.sort((a,b)=>a>b?1:-1);
+  A = A.sort((a, b) => a > b ? 1 : -1);
 
-  if(A[0] !== 1){
+  if (A[0] !== 1) {
     return result = 0;
   }
   if (A.length === 1) {

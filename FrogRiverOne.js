@@ -13,7 +13,7 @@ function solution(X, A) {
   // init a found leaves array to store found leaves
   let foundLeaves = [];
   // init accumulated distance of X
-  let sum = X*(X + 1) / 2;
+  let sum = X * (X + 1) / 2;
   let currentSum = 0;
   // loop leaves array
   let i = -1;

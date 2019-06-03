@@ -6,7 +6,7 @@ function solution(A, K) {
   N = A.length;
   let swap = [];
   K = K % N;
-  if(K === 0){
+  if (K === 0) {
     return A;
   }
   let shift1 = 0;
@@ -14,8 +14,8 @@ function solution(A, K) {
   // loop A
   for (let i = 0; i < A.length - 1; i++) {
     //  replace neighbor except the last element
-    shift1 = (i+K)%N;
-    shift2 = (i + K * 2)%N;
+    shift1 = (i + K) % N;
+    shift2 = (i + K * 2) % N;
     swap[shift2] = A[shift1];
     A[shift1] = A[i];
   }

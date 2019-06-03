@@ -1,15 +1,17 @@
+const timer = require('./timer.js');
+
 function solution(A) {
   let equAmt = 0;
-  let {leader, leaderAmt} = getLeaderInfo(A);
-  if(leader === null){
+  let { leader, leaderAmt } = getLeaderInfo(A);
+  if (leader === null) {
     return equAmt;
   }
   let currentLeaderAmt = 0;
   for (let i = 0; i < A.length; i++) {
-    if(A[i] === leader){
+    if (A[i] === leader) {
       currentLeaderAmt++;
     }
-    if(currentLeaderAmt > ((i+1)/2) && ((leaderAmt-currentLeaderAmt) > (A.length - 1 - i)/2)){
+    if (currentLeaderAmt > ((i + 1) / 2) && ((leaderAmt - currentLeaderAmt) > (A.length - 1 - i) / 2)) {
       equAmt++;
     }
   }
@@ -22,12 +24,12 @@ function getLeaderInfo(A) {
   let leader;
 
   for (let i = 0; i < A.length; i++) {
-    size[A[i]] = !!size[A[i]]?size[A[i]]:0;
-    if(leader !== undefined && A[i] === leader){
+    size[A[i]] = !!size[A[i]] ? size[A[i]] : 0;
+    if (leader !== undefined && A[i] === leader) {
       size[A[i]]++;
-    }else{
+    } else {
       size[A[i]] = 1 + size[A[i]];
-      if(size[A[i]] > A.length/2){
+      if (size[A[i]] > A.length / 2) {
         leader = A[i];
       }
     }
@@ -36,19 +38,20 @@ function getLeaderInfo(A) {
 
   return {
     leader: leader,
-    leaderAmt: leader!==null?size[leader]:0
-  }
+    leaderAmt: leader !== undefined ? size[leader] : 0
+  };
 }
 
 const testCase = [
-  [4,3,4,4,4,2],
-  [4,4,4,4,4,4],
+  [4, 3, 4, 4, 4, 2],
+  [4, 4, 4, 4, 4, 4],
 ];
 
+timer(() => {
+  testCase.forEach(v => {
+    console.log(solution(v));
+  });
+});
 
-console.log(a);
 
 
-// testCase.forEach((v)=>{
-//   console.log(solution(v));
-// });
