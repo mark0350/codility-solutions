@@ -1,18 +1,14 @@
 function solution(A) {
-  let result = 1;
-  A = A.sort((a, b) => a > b ? 1 : -1);
-
-  if (A[0] !== 1) {
-    return result = 0;
-  }
-  if (A.length === 1) {
-    return result;
-  }
-  for (let i = 0; i < A.length - 1; i++) {
-    if ((A[i] + 1) !== A[i + 1]) {
-      return result = 0;
+  const flag = [];
+  for (let i = 0; i < A.length; i++) {
+    if (A[i] > A.length) {
+      return 0;
+    } else if (flag[A[i]] != null) {
+      return 0;
+    } else {
+      flag[A[i]] = true;
     }
   }
-  return result = 1;
-  // write your code in JavaScript (Node.js 8.9.4)
+  return 1;
 }
+
